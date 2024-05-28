@@ -1,0 +1,302 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+/*To calculate Polar Coordinates*/
+{
+    float x,y,r,t;
+    printf("Enter the coordinates of a point:");
+    scanf("%f %f",&x,&y);
+    r=sqrt(x*x+y*y);
+    t=atan(y/x);
+    printf(" Polar Coordinates are:%f %f ",r,t);
+    return 0;
+}
+
+#include <stdio.h>
+int main()
+/*Program A:To calculate the sum of the digits of a five digit no.*/
+{
+    int n,d1,d2,d3,d4,d5,sum;
+    printf("Enter any No.:");
+    scanf("%d",&n);
+    d5=n%10;
+    n=n/10;
+    d4=n%10;
+    n=n/10;
+    d3=n%10;
+    n=n/10;
+    d2=n%10;
+    n=n/10;
+    d1=n%10;
+    sum=d1+d2+d3+d4+d5;
+    printf("%d",sum);
+    return 0;
+}
+
+#include <stdio.h>
+int main()
+/*Program B:To calculate the sum of the digits of a five digit no.*/
+{
+    int n,d1,d2,d3,d4,d5,sum;
+    printf("Enter any No.:");
+    scanf("%d",&n);
+
+int sum =0;
+while(n!=0)
+{
+    int p = n%10;
+    sum=sum+p;
+    n=n/10;
+}
+    printf("%d",sum);
+    return 0;
+}
+
+#include <stdio.h>
+int main()
+/*To Reverse a five digit number entered*/
+{
+    int n,d1,d2,d3,d4,d5,no;
+    printf("Enter any No.:");
+    scanf("%d",&n);
+    d5=n%10;
+    n=n/10;
+    d4=n%10;
+    n=n/10;
+    d3=n%10;
+    n=n/10;
+    d2=n%10;
+    n=n/10;
+    d1=n%10;
+    no=d5*10000+d4*1000+d3*100+d2*10+d1;
+    printf("%d\n",no);
+    return 0;
+}
+
+#include <stdio.h>
+int main()
+/*To find the minimum number of notes to carry for a specific amount*/
+{
+    int n,nohun,nofif,noten,nofiv,notwo,noone,rev;
+    printf("Enter Specific Amount to Carry:");
+    scanf("%d",&n);
+    nohun=n/100;
+    n=n%100;
+    nofif=n/50;
+    n=n%50;
+    noten=n/10;
+    n=n%10;
+    nofiv=n/5;
+    n=n%5;
+    notwo=n/2;
+    n=n%2;
+    noone=n;
+    rev=nohun+nofif+noten+nofiv+notwo+noone;
+    printf("No. of Notes or Coins you should carry:");
+    printf("                               Hundred=%d\n",nohun);
+    printf("      Fifty=%d\n",nofif);
+    printf("      Ten=%d\n",noten);
+    printf("      Two=%d\n",notwo);
+    printf("      One=%d\n",noone);
+    printf("Total no. of notes to be carry=%d\n",rev);
+    return 0;
+}
+
+#include <stdio.h>
+#include <math.h>
+int main()
+/*To calculate Trigonometric Ratios*/
+{
+    float an,si,co,ta,se,ct,cs;
+    printf("Enter the value of a angle:");
+    scanf("%f",&an);
+    si=sin(an);
+    co=cos(an);
+    ta=tan(an);
+    se=1/cs;
+    ct=1/ta;
+    cs=1/si;
+    printf("Trigonometric Ratios:");
+    printf("             Sine=%f\n",si);
+    printf("           CoSine=%f\n",co);
+    printf("             Tangent=%f\n",ta);
+    printf("             Cosec=%f\n",cs);
+    printf("             Sec=%f\n",se);
+    printf("             Cot=%f\n",ct);
+    return 0;
+}
+
+
+#include <stdio.h>
+int main()
+/*Program to check if all the three points lie on a straight line*/
+{
+  float x1,y1,x2,y2,x3,y3,ar;
+  printf("Enter the coordinates of the 1st point:");
+  scanf("%f %f",&x1,&y1);
+  printf("Enter the coordinates of the 2nd point:");
+  scanf("%f %f",&x2,&y2);
+  printf("Enter the coordinates of the 3rd point:");
+  scanf("%f %f",&x3,&y3);
+  ar=0.5*(x1*(y2-y3)-y1*(x2-x3)+(x2*y3-x3*y2));
+  if (ar==0.0)
+      printf("All the three points do fall on a straight line.");
+  else
+      printf("All the three points do not fall on a straight line.");
+  return 0;
+}
+
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+  int x,y,x1,y1,r;
+  float c;
+  printf("Enter the radius of the circle:");
+  scanf("%f",&r);
+  printf("Enter the coordinates of the center of the circle:");
+  scanf("%f %f ",&x,&y);
+  printf("Enter the coordinates of the point:");
+  scanf("%f %f ",&x1,&y1);
+  c=sqrt(pow(x-x1,2)+pow(y-y1,2));
+  if (c==r)
+    printf("Point lie on the boundary of the circle.");
+  else if(c>r)
+    printf("Point lies outside the boundary of the circle.");
+  else if (c<r)
+    printf("Point lies outside the boundary of the circle.");
+  else
+    printf("Incorrect!!");
+  return 0;
+}
+
+
+#include <stdio.h>
+int main()
+//Program to check if the point lies on the x-axis,y-axis or on the origin.
+{
+   float x,y;
+   printf("Enter the coordinates of the point:");
+   scanf("%f %f",&x,&y);
+   if (x==0 && y!=0)
+       printf("Point lies on the Y-Axis.");
+   else if (x!=0 && y==0)
+       printf("Point lies on the X-Axis.");
+   else if(x!=0 && y!=0)
+       printf("Point Neither lies on the x- axis nor on the y-axis");
+   else 
+       printf("Point lies on the Origin");
+   return 0;
+}
+
+
+#include <stdio.h>
+#include <math.h>
+int main()
+//To check if a year entered is leap year or not 
+{
+ int yr;
+ printf("Enter the year :");
+ scanf("%d",&yr);
+ if (yr%400==0  || yr%100!=0 && yr%4==0)
+    printf("It's a leap year.");
+ else
+    printf("It's not a leap year.");
+ return 0 ;
+}
+
+#include <stdio.h>
+#include <math.h>
+int main()
+//To check if the traingle is an isosceles ,an equilateral,a scalene or a right-angled triangle
+{
+  int a,b,c;
+  printf("Enter the length of the three sides of the triangle:");
+  scanf("%d %d %d ",&a,&b,&c);
+  
+  
+  if (a==b && b==c )
+  {
+       printf("Triangle is an Equilateral Triangle.\n");
+  }
+  else if (a==b || b==c || a==c)
+  {
+       printf("Triangle is an Isosceles Triangle\n");
+  }
+  else if (a!=b && b!=c)
+   { 
+       printf("Triangle is a Scalene Triangle\n");
+   }
+  else 
+  {
+       printf("Triangle is a Right-Angled Triangle\n");
+  }
+  return 0; 
+}
+
+
+#include <stdio.h>
+#include <math.h> 
+int main()
+//To Find Out Our BMI(Body Mass Index) Category.
+{
+    float wght,hght,bmi;
+    printf("Enter the Weight(in Kg) of your body:");
+    scanf("%f",&wght);
+    printf("Enter the height(in m) of your body:");
+    scanf("%f",&hght);
+    bmi=wght/(hght*hght);
+    printf("Your BMI(Body Mass Index) is : %f\n",bmi);
+    if (bmi<15)
+           printf("BMI Category:Starvation");
+           printf("")
+    else if (bmi>=15.1 && bmi<=17.5)
+           printf("BMI Category:Anorexic");
+    else if(bmi>=17.6 && bmi<=18.5)
+           printf("BMI Category:Underweight");
+    else if (bmi>=18.6 && bmi<=24.9)
+           printf("BMI Category:Ideal");
+    else if (bmi>=25 && bmi<=25.9)
+           printf("BMI Category:Overweight");
+    else if (bmi>=30 && bmi<=30.9)
+           printf("BMI Category:Obese");
+    else if (bmi<=0)
+           printf("Incorrect!!");
+    else
+           printf("BMI Category:Morbidly Obese");
+    return 0;
+}
+
+
+#include <stdio.h>
+#include <math.h>
+// To get the grade of the specific steel. 
+int main()
+{
+    float h,c,t;
+    printf("Enter the details for the grade of steel:\n");
+    printf("Hardness:");
+    scanf("%f",&h);
+    printf("Carbon content:");
+    scanf("%f",&c);
+    printf("Tensile Strength:");
+    scanf("%f",&t);
+    if (h>50 && c<0.7 && t>5600)
+        printf("Grade:10 ");
+    else if (h>50 && c<0.7)
+        printf("Grade: 9");
+    else if (c<0.7 && t>5600)
+        printf("Grade:8");
+    else if (h>50 && t>5600)
+        printf("Grade :7");
+    else if(h>50 && h>=0|| c<0.7 && c>=0 || t>5600 && t>=0)
+        printf("Grade:6");
+    else if (h<50 && c>0.7 && t<5600) 
+        printf("Grade:5");
+    else 
+        printf("Incorrect!!");
+    return 0;
+}
+
+
+
