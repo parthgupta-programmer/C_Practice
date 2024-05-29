@@ -1,0 +1,85 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+//To convert RGB Format into CMYK Format.
+{
+    float r,g,b,c,m,y,k,rf,gf,bf,max,w;
+    printf("In Digital World Colors are specified in RGB Format(Red-Green-Blue)\n");
+    printf("Enter the value of RGB Format:\n");
+    printf("Red:");
+    scanf("%d",&r);
+    printf("Green:");
+    scanf("%d",&g);    
+    printf("Blue:");
+    scanf("%d",&b);
+    printf("Changing the RGB Format into CMYK Format which is the format of publishing print.\n");
+    rf=r/255;
+    bf=b/255;
+    gf=g/255;
+    max=rf;
+    if (max<gf)
+        max=gf;
+    if (max<bf)
+        max=bf;
+    w=max;
+    c=(w-rf)/w;
+    m=(w-gf)/w;
+    y=(w-bf)/w;
+    k=1-w;
+    if (r=0 && g=0 && b=0)
+    {
+       c=0;
+       m=0;
+       y=0;
+       k=1;
+       printf("CMYK  Format:\n");
+       printf(      "Cyan:%f",c);
+       printf(      "Magenta:%f",m);
+       printf(      "Yellow:%f\n",y);
+       printf(      "Black:%f\n",k);
+    }
+    else
+    {
+       printf("CMYK  Format:\n");
+       printf(      "Cyan:%f\n",c);
+       printf(      "Magenta:%f\n",m);
+       printf(      "Yellow:%f\n",y);
+       printf(      "Black:%f\n",k);
+    }
+    return 0;
+}
+
+#include <stdio.h>
+#include <math.h>
+int main()
+//Progrram A:To print factorial of any number using for loop.
+{
+ int n,i,f;
+ printf("Enter any number:");
+ scanf("%d",&n);
+ f=1;
+ for (i=1;i<=n;i++)
+    {
+      f=f*i;
+        
+    }
+ printf("Factorial=%d\n",f);
+}
+#include <stdio.h>
+#include <math.h>
+int main()
+//Program B:To calculate the factorial of any number using while loop .
+{
+     int i,n,f;
+     printf("Enter any no.:");
+     scanf("%d",&n);
+     i=1;
+     f=1;
+     while(i<=n)
+     {
+        f=f*i;
+        i=i+1;
+     }
+        printf("Factorial:%d\n",f);
+        return 0;
+}
