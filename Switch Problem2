@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <math.h>
+//To calculate the grace marks of a student.
+int main(){
+    int cl,fl,grace,tlgr;
+    printf("Enter the Class(1/2/3) obtained by the student\n:");
+    scanf("%d",&cl);
+    printf("Enter the number of subjects the student failed:\n");
+    scanf("%d",&fl);
+    switch(cl){
+        case 1:
+              if(fl>3){
+                  printf("Student does not got any grace marks.\n");
+                  grace=0;
+              }
+              else{
+                  printf("Student gets a grace of 5 marks per subject.\n");
+                  grace=5;
+              }
+              break;
+        case 2:
+             if(fl>2){
+                 printf("Student does not get any grace.\n");
+                 grace=0;
+             }
+             else{
+                 printf("Student gets a grace of 4 marks per subject.\n");
+                 grace=4;
+             }
+             break;
+        case 3:
+             if(fl>1){
+                 printf("Student does not get any grace.\n");
+                 grace=0;
+             }
+             else{
+                 printf("Student gets a grace of 5 marks per subject.\n");
+             }
+             break;
+
+        default:
+             printf("Incorrect!!\n");
+    }
+    tlgr=fl*grace;
+    printf("Total Grace marks:%d",tlgr);
+    return 0;
+}
