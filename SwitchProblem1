@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+int main()
+//To print a program choosing the choice until exit by the user.
+{
+    int num,i,f,ch;
+    
+    while (1){
+        printf("1.Factorial Nmuber\n");
+        printf("2.Prime or not.\n");
+        printf("3.Odd or Even\n");
+        printf("4.Exit\n");
+        printf("Enter Your Choice(1/2/3/4):");
+        scanf("%d",&ch);
+    switch(ch){
+          case 1:
+              printf("Enter Any Number:");
+              scanf("%d",&num);
+              f=1;
+              for(i=1;i<=num;i++){
+                     f=f*i;
+              }
+              printf("Factorial of a number:%d\n",f);
+              break;
+          case 2:
+              printf("Enter Any Number:");
+              scanf("%d",&num);
+              for(i=2;i<num;i++){
+                  if (num%i==0){
+                      printf("Not a Prime Number.\n");
+                      break;
+                  }
+                  else{
+                      printf("Prime Number.\n");
+                      break;
+                  }
+              break;      
+              }
+          case 3:
+              printf("Enter Any Number:");
+              scanf("%d",&num);
+              if (num%2==0){
+                  printf("Even Number.\n");
+              }
+              else{
+                   printf("Odd Number.\n");
+              break;           
+              }
+          case 4 :
+               exit(0);
+               break;
+          default:
+               printf("Incorrct!!\a\n");//Without this (\a\n),code runs only two times.
+        }    
+    }
+    return 0;
+}
