@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+int fact();
+//To print the factorial of a number by making a function.
+int main()
+{
+    int n,factorial;
+    printf("Enter any number:");
+    scanf("%d",&n);
+    factorial=fact(n);
+    printf("Factorial of number entered:%d",factorial);
+}
+int fact(n){
+    int i,f=1;
+    for(i=1;i<=n;i++){
+        f=f*i;
+    }
+    return f;
+}
+
+
