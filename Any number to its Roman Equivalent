@@ -1,0 +1,69 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+//Program A:To print any number into Roman Equivalent.
+int main(){
+    int n,m,d,c,l,v,x,i;
+    printf("Enter any number:");
+    scanf("%d",&n);
+    m=n/1000;
+    for(i=1;i<=m;i++){
+        printf("%c",'M');
+    }
+    n=n%1000;
+    d=n/500;
+    for(i=1;i<=d;i++){
+        printf("%c",'D');
+    }
+    n=n%500;
+    c=n/100;
+    for(i=1;i<=c;i++){
+        printf("%c",'C');
+    }
+    n=n%100;
+    l=n/50;
+    for(i=1;i<=l;i++){
+        printf("%c",'L');
+    }
+    n=n%50;
+    x=n/10;
+    for(i=1;i<=x;i++){
+        printf("%c",'X');
+    }
+    n=n%10;
+    v=n/5;
+    for(i=1;i<=v;i++){
+        printf("%c",'V');
+    }
+    i=n;
+    for(i=1;i<=n;i++){
+        printf("%c",'I');
+    }
+    return 0;
+}
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+int romanise (int ,int ,char);
+//Program B:To print any number into Roman Equivalent using a function.
+int main(){
+    int n;
+    printf("Enter any number:");
+    scanf("%d",&n);
+    n=romanise(n,1000,'M');
+    n=romanise(n,500,'D');
+    n=romanise(n,100,'C');
+    n=romanise(n,50,'L');
+    n=romanise(n,10,'X');
+    n=romanise(n,5,'V');
+    romanise(n,1,'I');
+    return 0;
+}
+int romanise(int y,int k,char ch){
+    int i,j;
+    j=y/k;
+    for (i=1;i<=j;i++)  
+       printf("%c",ch);
+    return (y % k);
+}
