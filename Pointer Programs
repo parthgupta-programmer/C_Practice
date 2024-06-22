@@ -1,0 +1,51 @@
+Program 1:
+#include <stdio.h>
+#include <math.h>
+//Pointer:Program in which a Function that recieves 5 integres and returns the sum,avg and standard deviation.(*Calling this function from main and printing the results in main()*)
+void dowork(int *sum,int *avg,float *sd);
+int main(){
+    int sum,avg;
+    float sd;
+    dowork(&sum,&avg,&sd);
+    printf("SUM=%d\n",sum);
+    printf("AVG=%d\n",avg);
+    printf("Standard Deviation=%f\n",sd);
+}
+void dowork(int *sum,int*avg,float *sd){
+    int a,b,c,d,e;
+    printf("Enter five numbers\n");
+    scanf("%d %d %d %d %d",&a,&b,&c,&d,&e);
+    *sum=a+b+c+d+e;
+    *avg=(a+b+c+d+e)/5;
+    *sd=sqrt((pow((a-*avg),2)+pow((b-*avg),2)+pow((c-*avg),2)+pow((d-*avg),2)+pow((e-*avg),2))/5);
+}
+
+
+Program 2:
+#include <stdio.h>
+#include <math.h>
+//Pointer:Program that defines a function that calculates power of one number raised to other and factorial of the another number entered (*IN ONE CALL IN main()*)
+void dwrk(int x,int y,int num,int *pwr,int *fact);
+int main(){
+    int a,b,n,pwr,fact;
+    printf("Enter 1st No.=");
+    scanf("%d",&a);
+    printf("Enter 2nd No.=");
+    scanf("%d",&b);
+    printf("Enter No. to find its factorial=");
+    scanf("%d",&n);
+    dwrk(a,b,n,&pwr,&fact);
+    printf("Power=%d  Factorial=%d",pwr,fact);
+    return 0;
+}
+void dwrk(int x,int y,int num,int *pwr,int *fact){
+    *pwr=pow(x,y);
+    int i,f=1;
+    for(i=1;i<=num;i++){
+        f=f*i;
+    }
+    *fact=f;
+}
+
+
+
