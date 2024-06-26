@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <math.h>
+//Recursive Function:Printing sum of a five digit number using a recursive function.
+int sum(int x);
+int main(){
+    int n,tsum;
+    printf("Enter any number:");
+    scanf("%d",&n);
+    tsum=sum(n);
+    printf("Sum:%d",tsum);
+    return 0;
+}
+int sum(int x){
+    int s,d;
+    if (x!=0){
+        d=x%10;
+        s=sum(x/10)+d;
+                      
+    }
+    else{
+        return 0;
+    }
+    return s;
+}
