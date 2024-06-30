@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+//Recursion:Program to print the first 25 numbers of a fibonacci sequence.
+int fib(int i,int j);
+int main(){
+    fib(0,1);
+    return 0;
+}
+int fib(int i,int j){
+    static int count=0;
+    if (count<25){
+        int k=i+j;
+        printf("%d ",k);
+        count=count+1;
+        fib(j,k);
+        return k;
+    }
+    else{
+        return 0;
+    }
+}
