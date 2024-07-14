@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+//Array:To interchange the elements at odd position with elements at even position.
+int main(){
+    int arr[]={12,4,5,1,9,13,11,19,54,34};
+    int i,t;
+    for(i=0;i<=9;i=i+2){
+        t=arr[i];
+        arr[i]=arr[i+1];
+        arr[i+1]=t;
+    }
+    for(i=0;i<=9;i++){
+        printf("%d\t",arr[i]);
+    }
+    return 0;
+}
+
