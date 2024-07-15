@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <math.h>
+//Array:To find mean and standard deviation of the elements an array.
+int main(){
+    int i,n,c1;
+    float c=0.0,sd,m=0.0;
+    printf("Enter the no. of elements:");
+    scanf("%d",&n);
+    c1=n-1;
+    int arr[n];
+    printf("Enter the elements:");
+    for(i=0;i<=c1;i++){
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<=c1;i++){
+        m=m+arr[i];
+    }
+    printf("Mean:%f\n",m/n);
+    for(i=0;i<=c1;i++){
+        c=c+pow((arr[i]-m/n),2);
+    }
+    printf("Standard Deviation:%f",sqrt(c/n));
+    return 0;
+}
