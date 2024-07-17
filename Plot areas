@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <math.h>
+//Array:Inputing no of plots with its any two side lengths and angle between them and then printing their respective areas along with maximum area. 
+int main(){
+    int n,n1;
+    printf("Enter the no. of plots:");
+    scanf("%d",&n);
+    int i,c=n-1,plt[n];
+    float ar[n],a[n],b[n],an[n];
+    printf("Plot Numbers:");
+    for(i=0;i<=c;i++){
+        scanf("%d",&plt[i]);
+    }
+    printf("Respective Plot's one side length:");
+    for(i=0;i<=c;i++){
+        scanf("%f",&a[i]);
+    }
+    printf("Respective Plot's another side length:");
+    for(i=0;i<=c;i++){
+        scanf("%f",&b[i]);
+    }
+    printf("Respective Plot's angle btw side provided:");
+    for(i=0;i<=c;i++){
+        scanf("%f",&an[i]);
+    }
+    printf("\n");
+    printf("\n");
+    float max;
+    for(i=0;i<=c;i++){
+        ar[i]=0.5*(a[i])*(b[i])*(sin(an[i]));
+        printf("Plot No.%d with its two sides %0.2f & %0.2f and angle %0.2f has area:%0.2f \n",plt[i],a[i],b[i],an[i],ar[i]);
+    }
+    max=ar[0];
+    for(i=0;i<=c;i++){
+        if(ar[i]>max){
+            max=ar[i];
+            n1=i+1;
+        }
+    }
+    printf("\n");
+    printf("\n");
+    printf("Plot No.%d has Maximum Area:%0.2f",n1,max);
+    return 0;
