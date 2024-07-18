@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+//Array:Pearson Correlation Coefficient r
+int main(){
+    int n,i;
+    printf("     Pearson Correlation Coefficient\n");
+    printf("Enter the no. of data points:");
+    scanf("%d",&n);
+    int c=n-1;
+    float r,x[n],y[n],xy=0.0,x1=0.0,y1=0.0,x2=0.0,y2=0.0;
+    printf("Enter the data point value x:");
+    for(i=0;i<=c;i++){
+        scanf("%f",&x[i]);
+    }
+    printf("Enter the data point value y:");
+    for(i=0;i<=c;i++){
+        scanf("%f",&y[i]);
+    }
+    for(i=0;i<=c;i++){
+        xy=xy+x[i]*y[i];
+        x1=x1+x[i];
+        y1=y1+y[i];
+        x2=x2+x[i]*x[i];
+        y2=y2+y[i]*y[i];
+    }
+    r=(n*xy-(x1*y1))/sqrt((n*x2-pow(x1,2))*(n*y2-pow(y1,2)));
+    printf("Pearson Correlation Coefficient r:%0.4f",r);
+    return 0;
