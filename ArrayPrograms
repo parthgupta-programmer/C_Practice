@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <math.h>
+//Array1:Checking if arr[0]=arr[n-1] and so on.
+int main(){
+    int n;
+    printf("Enter the no. of elements:");
+    scanf("%d",&n);
+    int i,arr[n];
+    int c=n-1;
+    printf("Enter the numbers:");
+    for(i=0;i<=c;i++){
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<=c;i++){
+        if(arr[i]==arr[n-(i+1)]){
+            printf("%d element= %d element\n",i+1,n-(i+1)+1);
+        }
+    }
+    return 0;
+}
+
+
+
+#include <stdio.h>
+#include <math.h>
+//Array2:Sum of Distances Between Two Consecutive Points.
+int main(){
+    int n,i;
+    printf("Enter the number of points:");
+    scanf("%d",&n);
+    float x[n],y[n],d=0;
+    printf("Enter X and Y Coordinates(Like(x,y):1,2 3,4 5,6 7,8):");
+    for (i=0;i<=n-1;i++){
+        scanf("%f,%f",&x[i],&y[i]);
+    }
+    printf("\n");
+    printf("ENTERED DATA:\n");
+    for(i=0;i<=n-1;i++){
+        printf("X-Coordinate:%0.2f     Y-Coordinate:%0.2f\n",x[i],y[i]);
+    }
+    for(i=0;i<=n-1;i++){
+        d=d+sqrt(pow((x[i+1]-x[i]),2)+pow((y[i+1]-y[i]),2));
+    }
+    printf("\n");
+    printf("Sum of Distances Between Consecutive Points:%f",d);
+    return 0;
+}
