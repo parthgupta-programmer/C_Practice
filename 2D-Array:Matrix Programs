@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <math.h>
+//2D Array:Printing Largest no. in a matrix.
+int main(){
+    int n,m;
+    printf("Enter the no. of rows and columns:");
+    scanf("%d %d",&n,&m);
+    printf("\n");
+    int a[n][m];
+    printf("Enter the data for the matrix:\n");
+    for(int i=0;i<=n-1;i++){
+        for(int j=0;j<=m-1;j++){
+            scanf("%d",&a[i][j]);
+        }
+    }
+    int big=a[0][0];
+    for(int i=0;i<=n-1;i++){
+        for(int j=0;j<=m-1;j++){
+            if(a[i][j]>big){
+                big=a[i][j];
+            }
+        }
+    }
+    printf("\n");
+    printf("Largest No. of Matrix:%d",big);
+    
+    return 0;
+}
+
+
+
+
+
+
+#include <stdio.h>
+#include <math.h>
+//2D Array:Transpose of a matrix.
+int main(){
+    int arr[2][3]={
+                   1,2,3,
+                   4,5,6
+    };
+    int i,j,ar[3][2];
+    for(i=0;i<=2-1;i++){
+        for(j=0;j<=3-1;j++){
+            ar[j][i]=arr[i][j];
+        }
+    }
+    for(i=0;i<=3-1;i++){
+        for(j=0;j<=2-1;j++){
+           printf("%d ",ar[i][j]);
+        }
+    printf("\n");
+    }
+}
