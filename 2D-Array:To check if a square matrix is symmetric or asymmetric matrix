@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <math.h>
+//2D Array (Matrix):To check if matrix entered is symmetric or asymmetric.
+int main(){
+    int n;
+    printf("Enter order for a square matrix:");
+    scanf("%d",&n);
+    int arr[n][n];
+    printf("Enter the elements to a matrix:\n");
+    for (int i=0;i<=n-1;i++){
+        for(int j=0;j<=n-1;j++){
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    int i,j,s=0,tarr[n][n];
+    for(i=0;i<=n-1;i++){
+        for(j=0;j<=n-1;j++){
+            tarr[j][i]=arr[i][j];
+        }
+    }
+    for(i=0;i<=n-1;i++){
+        for(j=0;j<=n-1;j++){
+            if(arr[i][j]==tarr[i][j]){
+                s=s+1;
+            }
+        }
+    }
+    if(s==n*n){
+        printf("This is a Symmetric Matrix.");
+    }
+    else{
+        printf("This is  a Asymmetric Matrix.");
+    }
+    return 0;
+}
