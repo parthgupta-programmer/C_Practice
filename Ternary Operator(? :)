@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+//Array:Use of Ternary Operator(?:)--Circulating the two array elements to the left.
+int main(){
+    int p[5]={19,23,56,14,34};
+    int i,pn[5];
+    printf("Original String:");
+    for(i=0;i<=4;i++){
+        printf("%d ",p[i]);
+    }
+    printf("\n");
+    for(i=0;i<=4;i++){
+        pn[i]=p[(i<=2)?i+2:((i==3)?0:1)];
+    }
+    printf("Circulated String:");
+    for(i=0;i<=4;i++){
+        printf("%d ",pn[i]);
+    }
+    return 0;
+}
