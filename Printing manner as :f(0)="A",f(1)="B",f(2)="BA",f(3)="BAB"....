@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+//String:Printing fibonnaci words of order 0 through 5 (Example:f(0)="A",f(1)="B",f(2)="BA",f(3)="BAB"....
+int main(){
+    char str1[50]="A";
+    char str2[50]="B";
+    char n[50];
+    int i;
+    for(i=1;i<=5;i++){
+        strcpy(n,str2);
+        strcat(n,str1);
+        printf("%s\n",n);
+        strcpy(str1,str2);
+        strcpy(str2,n);
+    }
+    return 0;
+}
