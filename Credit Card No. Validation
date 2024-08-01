@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <math.h>
+//Credit Card No.Validity
+int main(){
+    printf("           Credit Card No.Validity    \n");
+    printf("\n");
+    int arr[16];
+    printf("Enter Credit No.:");
+    for(int i=0;i<=15;i++){
+        scanf("%d",&arr[i]);
+    }
+    int n[16];
+    for(int i=0;i<=15;i++){
+        if(i%2==0){
+            n[i]=arr[i]*2;
+        }
+        else {
+            n[i]=0;
+        }
+    }
+    int s=0,s1=0;
+    for(int i=0;i<=15;i++){
+        if(n[i]>=10){
+            n[i]=n[i]-9;
+        }
+        else{
+            n[i]=n[i];
+        }
+    }
+    for(int i=0;i<=15;i++){
+        s=s+n[i];
+    }
+    for(int i=0;i<=15;i++){
+        if(i%2!=0){
+            s1=s1+arr[i];
+        }
+    }
+    printf("\n");
+    if((s+s1)%8==0){
+        printf("Valid Credit No.");
+    }
+    else{
+        printf("Invalid Credit No.!!");
+    }
+    return 0;
+}
