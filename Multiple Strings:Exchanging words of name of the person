@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <math.h>
+//Multiple Strings:Exchanging words of name of the person.
+int main(){
+    char names[][20]={
+                  "akshay","parag","raman","srinivas","gopal","rajesh"
+                     };
+    int i;
+    char t;
+    printf("Original:%s %s\n",&names[2][0],&names[3][0]);
+    for(i=0;i<=19;i++){
+        t=names[2][i];
+        names[2][i]=names[3][i];
+        names[3][i]=t;
+    }
+    printf("New:%s %s",&names[2][0],&names[3][0]);
+    return 0;
+}
+
+
+
+
+
+#include <stdio.h>
+#include <math.h>
+//Multiple Strings:Exchanging words of name of the person.(Using Pointers)
+int main(){
+    char *name[]={
+        "akshay","parag","raman","srinivas","rajesh"
+    };
+    char *temp;
+    printf("Original:%s %s\n",name[2],name[3]);
+    temp=name[2];
+    name[2]=name[3];
+    name[3]=temp;
+    printf("New:%s %s",name[2],name[3]);
+    return 0;
+}
