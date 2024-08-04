@@ -1,0 +1,32 @@
+
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+//Arranging names alphabetically
+int main(){
+    char str[]={
+        "Rajesh","Ashish","Milind","Pushkar","Bestie"
+    };
+    printf("Unordered Alphabatically Names:\n");
+    for(int i=0;i<=4;i++){
+        printf("%s ",str[i]);
+    }
+    printf("\n");
+    printf("\n");
+    char p;
+    int i,j;
+    printf("Ordered Alphabatically Names:\n");
+    for(i=0;i<=4;i++){
+       for(j=i+1;j<=4;j++){
+           if(strcmp(str[i],str[j])>0){
+           p=str[i];
+           str[i]=str[j];
+           str[j]=p;
+       }
+     }
+    }
+    for(i=0;i<=4;i++){
+        printf("%s ",str[i]);
+    }
+    return 0;
+}
