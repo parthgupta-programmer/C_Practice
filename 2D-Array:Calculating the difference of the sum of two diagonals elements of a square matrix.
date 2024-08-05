@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <math.h>
+//2D-Array:Calculating the difference of the sum of two diagonals elements of a square matrix.
+int main(){
+    int n;
+    printf("Enter the order of matrix:");
+    scanf("%d",&n);
+    printf("\n");
+    int arr[n][n];
+    printf("Enter the matrix elements:\n");
+    for(int i=0;i<=n-1;i++){
+        for(int j=0;j<=n-1;j++){
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    int s1=0;;
+    for(int i=0;i<=n-1;i++){
+        for(int j=0;j<=n-1;j++){
+            if(i==j){
+                s1=s1+arr[i][j];
+            }
+        }
+    }
+    int rarr[n][n];
+    for(int i=0;i<=n-1;i++){
+        for(int j=0;j<=n-1;j++){
+            rarr[i][j]=arr[i][(n-1)-j];
+        }
+    }
+    int s2=0;
+    for(int i=0;i<=n-1;i++){
+        for(int j=0;j<=n-1;j++){
+            if(i==j){
+                s2=s2+rarr[i][j];
+            }
+        }
+    }
+    printf("The difference in sum of two diagonals elements:");
+    int d=s1-s2;
+    if(d<0){
+        d=d*-1;
+    }
+    else{
+        d=d;
+    }
+    printf("%d",d);
+    return 0;
+}
+
+
+
+
