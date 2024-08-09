@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+#include <stdlib.h>
+//Structure P1
+int main(){
+    struct book{
+        char name[100]; float price; int pages;
+    };
+    struct book b1,b2,b3;
+    printf("Enter names,prices and the no.of pages of 3 Books:\n");
+    scanf("%s %f %d",&b1.name,&b1.price,&b1.pages);
+    scanf("%s %f %d",&b2.name,&b2.price,&b2.pages);
+    scanf("%s %f %d",&b3.name,&b3.price,&b3.pages);
+    printf("\n");
+    printf("%s %f %d\n",b1.name,b1.price,b1.pages);
+    printf("%s %f %d\n",b2.name,b2.price,b2.pages);
+    printf("%s %f %d\n",b3.name,b3.price,b3.pages);
+    return 0;
+    // struct book b1={"A",12.00,16};
+    // struct book b2={"B",13.99,17};
+    // struct book b3={"C",14.234,18};
+}
