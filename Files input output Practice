@@ -1,0 +1,217 @@
+//FILES PRACTICE
+
+
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+//Checking if a file is present or not.
+int main(){
+    FILE *fptr;
+    fptr=fopen("HELLO.txt","r");
+    if(fptr==NULL){
+        printf("File is not present.");
+    }
+    else{
+        printf("File is present.");
+    }
+    fclose(fptr);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+//Reading from the file.
+int main(){
+   FILE *fptr;
+   fptr=fopen("HELLO.txt","r");
+
+   char ch;//In file(Word-PRACTICE)
+
+   
+   fscanf(fptr,"%c",&ch);
+   printf("%c\n",ch);
+   fscanf(fptr,"%c",&ch);
+   printf("%c\n",ch);
+   fscanf(fptr,"%c",&ch);
+   printf("%c\n",ch);
+   fscanf(fptr,"%c",&ch);
+   printf("%c\n",ch);
+   fscanf(fptr,"%c",&ch);
+   printf("%c\n",ch);
+   fscanf(fptr,"%c",&ch);
+   printf("%c\n",ch);
+   fscanf(fptr,"%c",&ch);
+   printf("%c\n",ch);
+   fscanf(fptr,"%c",&ch);
+   printf("%c\n",ch);
+   
+   
+   
+   
+   
+   int n;//In File(Number=123 456 789)
+
+
+   fscanf(fptr,"%d",&n);
+   printf("%d\n",n);
+   
+   fscanf(fptr,"%d",&n);
+   printf("%d\n",n);
+
+   fscanf(fptr,"%d",&n);
+   printf("%d\n",n);
+
+   fclose(fptr);
+ 
+
+   fclose(fptr);
+   return 0;
+}
+
+
+
+
+
+
+//Writing into the file(
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+   FILE *fptr;//Data in File(123 456 789)
+   fptr=fopen("HELLO.txt","w");//"w"->write
+   
+   fprintf(fptr,"%d",12);
+   
+   fclose(fptr);
+   return 0;
+   //Output:12 printed in file and deletes the record (123 456 789)("w")
+}
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+int main(){
+   FILE *fptr;//Now Data in File(12)
+   fptr=fopen("HELLO.txt","a");//"a"->append
+   
+   fprintf(fptr,"%d",13);
+   
+   fclose(fptr);
+   return 0;
+   //Output:1213 printed in file do not deletes the record(12) because of "a" it just append forward.
+}
+)
+
+
+
+
+
+
+
+
+
+//Reading and Writing through  fgetc and fputc respectively (
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+int main(){
+   FILE *fptr;
+   fptr=fopen("HELLO.txt","r");
+   
+
+   //Reading through fgetc 
+   printf("%c\n",fgetc(fptr));
+   printf("%c\n",fgetc(fptr));
+   printf("%c\n",fgetc(fptr));
+   printf("%c\n",fgetc(fptr));
+   printf("%c\n",fgetc(fptr));
+   printf("%c\n",fgetc(fptr));
+   printf("%c\n",fgetc(fptr));
+   printf("%c\n",fgetc(fptr));
+
+
+   fclose(fptr);
+   return 0;
+}
+
+
+
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+int main(){
+   FILE *fptr;
+   fptr=fopen("HELLO.txt","w");
+   
+   //Writing or printing into the file through fputc
+   fputc('H',fptr);
+   fputc('E',fptr);
+   fputc('L',fptr);
+   fputc('L',fptr);
+   fputc('O',fptr);
+
+
+   
+
+   fclose(fptr);
+   return 0;
+}
+
+
+)
+
+
+
+
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+//fgetc returns EOF At the end of the file(EOF)
+int main(){
+   FILE *fptr;
+   fptr=fopen("HELLO.txt","r");
+   
+   char ch;
+   ch=fgetc(fptr);
+   while(ch!=EOF){
+      printf("%c",ch);
+      ch=fgetc(fptr);
+   }
+   printf("\n");
+   fclose(fptr);
+   return 0;
+}
+
+
+
+
+
+
+
+
+
+
