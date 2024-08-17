@@ -1,0 +1,93 @@
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+//Writing student information into the file inputted by the user.
+int main(){
+    FILE *fptr;
+    fptr=fopen("HELLO.txt","w");
+    printf("Enter the details of the students:\n");
+    char name[100];
+    int age;
+    float cgpa;
+    
+    scanf("%s",&name);
+    scanf("%d",&age);
+    scanf("%f",&cgpa);
+    
+    fprintf(fptr,"Student Name:%s Age:%d  cgpa:%f",name,age,cgpa);
+
+
+    fclose(fptr);
+        
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+//Printing the odd numbers from 1 to n into the file.
+int main(){
+    FILE *fptr;
+    fptr=fopen("HELLO.txt","w");
+    
+    int n;
+    printf("Enter the number:");
+    scanf("%d",&n);
+
+    for(int i=1;i<=n;i++){
+        if(i%2!=0){
+            fprintf(fptr,"%d\n",i);
+        }
+    }
+
+    fclose(fptr);
+        
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+//Replacing two numbers a and b with their sum(into the file) which are written in a file.
+int main(){
+   FILE *fptr;
+   fptr=fopen("HELLO.txt","r");
+
+   int a,b;
+   fscanf(fptr,"%d",&a);
+   fscanf(fptr,"%d",&b);
+
+   fclose(fptr);
+
+   fptr=fopen("HELLO.txt","w");
+   fprintf(fptr,"%d",a+b);
+
+   fclose(fptr);
+}
