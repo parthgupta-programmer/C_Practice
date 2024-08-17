@@ -1,0 +1,114 @@
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+//Reading string from the file and output to the user.
+int main(){
+   FILE *fptr;
+   fptr=fopen("HELLO.txt","r");
+   
+   char ch[100];
+   fscanf(fptr,"%s",&ch);
+   printf("String from the file:%s",ch);
+   
+   fclose(fptr);
+   return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+//Returning the no. of vowels in the main function from reading the string from the file.
+int main(){
+   FILE *fptr;
+
+   fptr=fopen("HELLO.txt","r");
+
+   char ch[100];
+   fscanf(fptr,"%s",ch);
+    
+   int s=0;
+   for(int i=0;ch[i]!='\0';i++){
+       if(ch[i]=='a' || ch[i]== 'A' || ch[i]=='E' || ch[i]=='e' || ch[i]=='I' || ch[i]=='i' || ch[i]=='o' || ch[i]=='O' || ch[i]=='U' || ch[i]=='u'){
+         s=s+1;
+      }
+   } 
+   printf("No. of vowels in a string:%d",s);
+
+   fclose(fptr);
+
+   return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+//Formatting the information of 5 students in a table like structure in a file.
+int main(){
+   FILE *fptr;
+   fptr=fopen("HELLO.txt","w");
+
+   struct student{
+      char name[100];
+      int age;
+      char course[100];
+      int marks;
+      float cgpa;
+   };
+
+   struct student n[5];
+   for(int i=0;i<=4;i++){
+      printf("Name of Student%d,Age,Course,Marks,CGPA:",i+1);
+      scanf("%s %d %s %d %f",n[i].name,&n[i].age,n[i].course,&n[i].marks,&n[i].cgpa);
+   }
+
+
+   for(int i=0;i<=4;i++){
+      fprintf(fptr,"Name of Student %d : %s ",i+1,n[i].name);
+      fprintf(fptr,"Age: %d ",n[i].age);
+      fprintf(fptr,"Course: %s ",n[i].course);
+      fprintf(fptr,"Marks: %d ",n[i].marks);
+      fprintf(fptr,"CGPA: %f ",n[i].cgpa);
+      fprintf(fptr,"\n");
+   }
+   
+   
+   fclose(fptr);
+
+   return 0;
+}
