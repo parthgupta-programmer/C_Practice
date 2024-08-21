@@ -1,0 +1,99 @@
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+#include <stdlib.h>
+//Inputting data of inputted no. of customers in a bank using a structure.
+//Function 1(f1):Printing the details of those whose balance is less than Rs 1000.00
+//Function 2(f2):Function that prints the balance after depositing  or withdrawling from the account and the conditon checking to deny for the withdrawl if balance is less than Rs.1000.00 
+struct data_customer {
+  int acc_no;
+  char name[100];
+  float balance;
+};
+void f1(struct data_customer *C,int size);
+void f2(struct data_customer *C,int size,int CODE,float wldm,float dpm,int cacc);
+int main(){
+    struct data_customer c[10];
+    int size;
+    printf("Enter the no. of customers:");
+    scanf("%d",&size);
+    printf("\n");
+    for(int i=0;i<=size-1;i++){
+        printf("Customer No.: %d\n",i+1);
+        printf("Enter the Account No.:");
+        scanf("%d",&c[i].acc_no);
+        printf("Enter the Name:");
+        scanf("%s",c[i].name);
+        printf("Enter the Balance:");
+        scanf("%f",&c[i].balance);
+        
+        printf("\n");
+    }
+    printf("Details of Customers with balance less than Rs.1000:\n");
+    f1(c,size);
+    char ans[100];
+    printf("Type YES if you want to withdraw or deposit the money:");
+    scanf("%s",ans);
+    int code;
+    printf("\n");
+    if(strcmp(ans,"YES")|| strcmp(ans,"Yes")){
+        printf("Enter Code No. 1 for deposit or Code No.0 for withdrawl:");
+        scanf("%d",&code);
+    }
+    else{
+        printf("Thank You for Entering the details of your account!!");
+    }
+    printf("\n");
+    int cacc;
+    float wldm,dpm;//withdrawl money and deposit money(wdlm and dpm)
+    if(code==1){
+        printf("Enter your Bank Account No.:");
+        scanf("%d",&cacc);
+        printf("Enter amount of money to be deposited:");
+        scanf("%f",&dpm);
+    }
+    if(code==0){
+        printf("Enter your Bank Account No.:");
+        scanf("%d",&cacc);
+        printf("Enter amount of money to be withdrawl:");
+        scanf("%f",&wldm);
+    }
+    printf("\n");
+    f2(c,size,code,wldm,dpm,cacc);
+    return 0;
+}
+void f1(struct data_customer *C,int size){
+    for(int i=0;i<=size-1;i++){
+        if(C[i].balance<1000.00){
+            printf("Account No.:%d\n ",C[i].acc_no);
+            printf("Name:%s\n ",C[i].name);
+            printf("\n");
+        }
+    }
+}
+void f2(struct data_customer *C,int size,int CODE,float wldm,float dpm,int cacc){
+    if(CODE==1){
+        for(int i=0;i<=size-1;i++){
+          if(cacc==C[i].acc_no){
+               printf("Your Money has been successfully deposited to the account\n");
+               printf("Your Current Balance:%f",C[i].balance+dpm);
+            }
+        }
+    }
+    else if(CODE==0){
+        for(int i=0;i<=size-1;i++){
+            if(cacc==C[i].acc_no){
+                if(C[i].balance<1000.00){
+                   printf("The balance is insufficient for the specified withdrawl :(");
+                }
+                else{
+                    printf("Your money has been succesfully withdrawled from your bank account balance.\n");
+                    printf("Your Current Balance:%f",C[i].balance-wldm);
+                }
+            }
+        }
+    }
+    else{
+        printf("You have entered Wrong Code No.");
+    }
+}
