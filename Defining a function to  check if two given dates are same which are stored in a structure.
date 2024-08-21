@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+//Defining a function to  check if two given dates are same which are stored in a structure.
+
+struct date{
+     int day;
+     int month;
+     int year;
+};
+
+void cmp(struct date D1,struct date D2);
+
+int main(){
+    struct date d1={13,5,2004};
+    struct date d2={23,6,2007};
+    cmp(d1,d2);
+    return 0;
+}
+void cmp(struct date D1,struct date D2){
+    if(D1.day==D2.day && D1.month==D2.month && D1.year==D2.year){
+        printf("Dates are same.");
+    }
+    else{
+        printf("Dates are not same");
+    }
+}
