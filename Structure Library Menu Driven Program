@@ -1,0 +1,151 @@
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+#include <stdlib.h>
+
+struct library {
+   int acs_no;
+   char title[1000];
+   char author[100];
+   float price;
+   char flag[100];
+   char extra[1000];
+};
+
+int main(){
+    
+    int n;
+    printf("Enter the number of books:");
+    scanf("%d",&n);
+    
+    struct library l[n];
+    
+    printf("Enter the details of the book one by one:\n\n");
+  
+    for(int i=0;i<=n-1;i++){
+        printf("Accession No.:");
+        scanf("%d",&l[i].acs_no);
+        printf("Book Title:");
+        scanf("%s",l[i].title);
+        printf("Book Author:");
+        scanf("%s",l[i].author);
+        printf("Book Price:");
+        scanf("%f",&l[i].price);
+        printf("FLag (Book Issued)[YES/NO]:");
+        scanf("%s",l[i].flag);
+        ");
+        printf("\n");
+    }
+    
+    printf("Menu FOR WORK:\n");
+    
+    printf("1.Add Book's ExtraInformation:\n");
+    printf("2.Display Book Information:\n");
+    printf("3.List all books odf given author:\n");
+    printf("4.List the title of the book specified by accession no.:\n");
+    printf("5.List the count of books in the library:\n");
+    printf("6.Know the price of the book specified by accession no.\n");
+    printf("7.EXIT\n");
+    
+    while(1){
+         int menu_no;
+         printf("ENTER MENU NO.");
+         scanf("%d",&menu_no);
+    
+         int cacs_no;
+         char author_name[100];
+    
+         switch(menu_no){
+            case 1:
+                 printf("Enter Book Accession No.:");
+                 scanf("%d",&cacs_no);
+                 for(int i=0;i<=n-1;i++){
+                      if(cacs_no==l[i].acs_no){
+                          printf("Now,Enter Extra information for your book.\n");
+                          printf("HERE:");
+                          scanf("%s",l[i].extra);
+                          break;
+                       }
+                      else if(i==n-1){
+                         printf("You have entered wrong Assession No.!!\n");
+                         break;
+                      }
+                 
+                 }
+                 break;
+            case 2:
+                printf("Enter Book Accession No.:");
+                scanf("%d",&cacs_no);
+                for(int i=0;i<=n-1;i++){
+                    if(cacs_no==l[i].acs_no){
+                        printf("Accesion No.:%d\n",l[i].acs_no);
+                        printf("Title of the Book:%s\n",l[i].title);
+                        printf("Author of the Book:%s\n",l[i].author);
+                        printf("Price of the Book:%f\n",l[i].price);
+                        printf("Flag (Book Issued):%s\n",l[i].flag);
+                        printf("Extra Information Uploaded:%s",l[i].extra);
+                        break;
+                    }
+                    else if(i==n-1){
+                        printf("You have entered wrong accession no.\n");
+                        break;
+                   }
+                }
+                break;
+            case 3:
+                printf("Enter Author Name:");
+                scanf("%s",author_name);
+                for(int i=0;i<=n;i++){
+                    if(strcmp(");author_name,l[i].author)==0){
+                          printf("Books with Same Auhtor:\n");
+                          printf("%s\n",l[i].title);
+                          break;
+                    }
+                    else if(i==n-1){
+                        printf("No Author Found with this name!!\n");
+                        break;
+                    }
+                }
+                break;
+            case 4:
+                printf("Enter Accession No.:");
+                scanf("%d",&cacs_no);
+                for(int i=0;i<=n-1;i++){
+                      if(cacs_no==l[i].acs_no){
+                           printf("Title of the Book with author:%s\n",l[i].title);
+                           break;
+                      }
+                      else if(i==n-1){
+                         printf("You have entered wrong Accession No.!!\n");
+                      break;
+                      }
+                }
+                break;
+            case 5:
+                 printf("Total No. of Books in the Library:%d\n",n);
+                 break;
+            case 6:
+                  printf("Enter Accession No.:");
+                  scanf("%d",&cacs_no);
+                  for(int i=0;i<=n-1;i++){
+                       if(cacs_no==l[i].acs_no){
+                           printf("Price of the Book :%f\n",l[i].price);
+                           break;
+                        }
+                       else if(i==n-1){
+                          printf("You have entered wrong Accession No.\n");
+                        break;
+                      }
+                  }
+                  break;
+            case 7:
+                  exit(0);
+                  break;
+            default:
+                  printf("INCORRECT MENU NO.:(\n Try Again!!\n");
+                  break;
+                 
+        }
+    }
+    return 0;
+}
