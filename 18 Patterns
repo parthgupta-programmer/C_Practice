@@ -1,0 +1,260 @@
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+#include <stdlib.h>
+int main(){
+    //Run the pattern one by one by non-commenting the same.
+
+    // int n=5;//(1.Solid Rectangle)
+    // int m=6;
+    // for(int i=1;i<=n;i++){
+    //     for(int j=1;j<=m;j++){
+    //         printf("*");
+    //     }
+    //     printf("\n");
+    // }
+    
+    
+    // int n=4;//(2.Hollow Rectangle)
+    // int m=5;
+    // for(int i=1;i<=n;i++){
+    //     for(int j=1;j<=m;j++){
+    //         if(i==1 || i==n || j==1 || j==m){
+    //             printf("*");
+    //         }
+    //         else{
+    //             printf(" ");
+    //         }
+    //     }
+    //     printf("\n");
+    // }
+    
+    
+    // for(int i=1;i<=5;i++){//(3.Left Half Pyramid)
+    //     for(int j=1;j<=i;j++){
+    //         printf("*");
+    //     }
+    //     printf("\n");
+    // }
+    
+    
+    // for(int i=5;i>=1;i--){//(4.Inverted Half Pyramid)
+    //     for(int j=1;j<=i;j++){
+    //         printf("*");
+    //     }
+    //     printf("\n");
+    // }
+    
+    // int n=4;//(5.Right Half Pyramid)
+    // for(int i=1;i<=n;i++){
+    //     for(int k=1;k<=n-i;k++){
+    //         printf(" ");
+    //     }
+    //     for(int j=1;j<=i;j++){
+    //         printf("*");
+    //     }
+    //     printf("\n");
+    // }
+    
+    
+    // for(int i=1;i<=5;i++){//(6.Left Half pyrmaid with numbers)
+    //     for(int j=1;j<=i;j++){
+    //         printf("%d ",j);
+    //     }
+    //     printf("\n");
+    // }
+    
+    
+    // for(int i=5;i>=1;i--){//(7.Inverted Half Pyramid with nunbers)
+    //     for(int j=1;j<=i;j++){
+    //         printf("%d ",j);
+    //     }
+    //     printf("\n");
+    // }
+    
+    // int s=1;//(8.Floyd's Triangle)
+    // for(int i=1;i<=5;i++){
+    //     for(int j=1;j<=i;j++){
+    //         printf("%d ",s);
+    //         s++;
+    //     }
+    //     printf("\n");
+    // }
+    
+    
+    // for(int i=1;i<=5;i++){//(9.0-1 Triangle)
+    //     for(int j=1;j<=i;j++){
+    //         if((i+j)%2==0){
+    //             printf("1 ");
+    //         }
+    //         else{
+    //             printf("0 ");
+    //         }
+    //     }
+    //     printf("\n");
+    // }    
+    
+    
+    // int n=4;//(10.Butterfly Pattern)
+    // for(int i=1;i<=4;i++){
+    //     for(int j=1;j<=i;j++){
+    //         printf("*");
+    //     }
+    //     for(int j=1;j<=2*(n-i);j++){
+    //         printf(" ");
+    //     }
+    //     for(int j=1;j<=i;j++){
+    //         printf("*");
+    //     }
+    //     printf("\n");
+    // }
+    
+    // for(int i=4;i>=1;i--){
+    //     for(int j=1;j<=i;j++){
+    //         printf("*");
+    //     }
+    //     for(int j=1;j<=2*(n-i);j++){
+    //         printf(" ");
+    //     }
+    //     for(int j=1;j<=i;j++){
+    //         printf("*");
+    //     }
+    //     printf("\n");
+    // }
+    
+    
+    // int n=5;//(11.Solid Rhombus)
+    // for(int i=1;i<=n;i++){
+    //     for(int j=1;j<=n-i;j++){
+    //         printf(" ");
+    //     }
+    //     for(int j=1;j<=n;j++){
+    //         printf("*");
+    //     }
+    //     printf("\n");
+    // }
+    
+    // int n=5;//(12.Same Number at row Pyramid)
+    // for(int i=1;i<=n;i++){
+    //     for(int j=1;j<=n-i;j++){
+    //         printf(" ");
+    //     }
+    //     for(int j=1;j<=i;j++){
+    //         printf("%d ",i);
+    //     }
+    //     printf("\n");
+    // }
+    
+    
+    
+
+
+    // int n=5;//(13.Different Number at row Pyramid)
+    // int s=1;
+    // for(int i=1;i<=n;i++){
+    //     for(int j=1;j<=n-i;j++){
+    //         printf(" ");
+    //     }
+    //     for(int j=1;j<=i;j++){
+    //         printf("%d ",s);
+    //         s++;
+    //     }
+    //     printf("\n");
+    // }
+    
+    
+    // int n=5;//(14.Palindromic Pattern)
+    // int n1=(n*2)-2;
+    // for(int i=1;i<=n;i++,n1=n1-2){
+    //     for(int j=1;j<=n1;j++){
+    //         printf(" ");
+    //     }
+    //     for(int j=i;j>=1;j--){
+    //         printf("%d ",j);
+    //     }
+    //     for(int j=2;j<=i;j++){
+    //         printf("%d ",j);
+    //     }
+    //     printf("\n");
+    // }
+    
+    
+    
+    
+    
+    // int n=10;//(15.Diamond Pattern)
+    // for(int i=1;i<=n;i++){
+    //     for(int j=1;j<=n-i;j++){
+    //         printf(" ");
+    //     }
+    //     for(int j=1;j<=((i*2)-1);j++){
+    //         printf("*");
+    //     }
+    //     printf("\n");
+    // }
+    // for(int i=n;i>=1;i--){
+    //     for(int j=1;j<=n-i;j++){
+    //         printf(" ");
+    //     }
+    //     for(int j=1;j<=((i*2)-1);j++){
+    //         printf("*");
+    //     }
+    //     printf("\n");
+    // }
+    
+    
+    
+    
+    
+    
+    // int n=5;//(16.Hollow Rhombus)
+    // for(int i=1;i<=n;i++){
+    //     for(int j=1;j<=n-i;j++){
+    //       printf(" ");
+    //     }
+    //     for(int j=1;j<=n;j++){
+    //         if(i==1 || j==1 || i==n || j==n){
+    //             printf("*");
+    //         }
+    //         else{
+    //             printf(" ");
+    //         }
+    //     }
+    //     printf("\n");
+    // }
+    
+    
+    
+    
+    // int n=5;//17.Half Pyramid Numbers
+    // for(int i=1;i<=n;i++){
+    //     for(int j=1;j<=n-i;j++){
+    //         printf(" ");
+    //     }
+    //     int s=1;
+    //     for(int j=1;j<=i;j++){
+    //         printf("%d ",s);
+    //         s++;
+    //     }
+    //     printf("\n");
+    // }
+    
+    
+    
+    
+    
+    
+    
+    // int n=5;//(18.Inverted Hlf Pyramid with numbers)
+    // for(int i=n,k=1;i>=1;i--,k++){
+    //     for(int j=1;j<=n-i;j++){
+    //         printf(" ");
+    //     }
+    //     for(int j=1;j<=i;j++){
+    //         printf("%d ",k);
+    //     }
+    //     printf("\n");
+    // }
+    return 0;
+    
+}
