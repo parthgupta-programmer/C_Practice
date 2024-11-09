@@ -1,0 +1,71 @@
+//  Smallest Divisible Digit Product I
+// User Accepted:17971
+// User Tried:18624
+// Total Accepted:19787
+// Total Submissions:31301
+// Difficulty:Easy
+// You are given two integers n and t. Return the smallest number greater than or equal to n such that the product of its digits is divisible by t.
+
+ 
+
+// Example 1:
+
+// Input: n = 10, t = 2
+
+// Output: 10
+
+// Explanation:
+
+// The digit product of 10 is 0, which is divisible by 2, making it the smallest number greater than or equal to 10 that satisfies the condition.
+
+// Example 2:
+
+// Input: n = 15, t = 3
+
+// Output: 16
+
+// Explanation:
+
+// The digit product of 16 is 6, which is divisible by 3, making it the smallest number greater than or equal to 15 that satisfies the condition.
+
+ 
+
+// Constraints:
+
+// 1 <= n <= 100
+// 1 <= t <= 10
+
+
+
+
+
+
+int digit_product(int N);
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+int main(){
+    int n,t,b=0,tn;
+    scanf("%d %d",&n,&t);
+    tn=n;
+    while(b!=1){
+        int r=digit_product(tn);
+        if(r%t==0 && tn>=n){
+            b=1;
+            printf("%d",tn);
+            break;
+        }
+        tn++;
+    }
+    return 0;
+}
+int digit_product(int N){
+    int d,p=1;
+    while(N!=0){
+        d=N%10;
+        N=N/10;
+        p=p*d;
+    }
+    return p;
+}
