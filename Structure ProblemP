@@ -1,0 +1,30 @@
+//Structure Problem:Storing Data of 50 students in a structure
+#include <stdio.h>
+#include <string.h>
+struct student{
+       char name[20];
+       int roll_no;
+       float phy,chem,math;
+};
+
+int main() {
+    struct student s[50];
+    printf("Enter the details of each Student:\n");
+    for(int i=0;i<=49;i++,r++){
+        printf("Student Reference ID:00%d\n",r);
+        printf("Student Name:");
+        fgets(s[i].name,sizeof(s[i].name),stdin);
+        printf("Roll No.:");
+        scanf("%d",&s[i].roll_no);
+        printf("Enter the Physics Chemistry and Maths Marks:");
+        scanf("%f %f %f",&s[i].phy,&s[i].chem,&s[i].math);
+        getchar();
+        printf("\n\n");
+    }
+    printf("STUDENT NAME ROLL NO. Physics Chemistry Maths Total Marks\n");
+    for(int i=0;i<=49;i++){
+        float total=s[i].phy+s[i].chem+s[i].math;
+        printf("%s\t%d %.2f %.2f %.2f %.2f\n",s[i].name,s[i].roll_no,s[i].phy,s[i].chem,s[i].math,total);
+    }
+    return 0;
+}
