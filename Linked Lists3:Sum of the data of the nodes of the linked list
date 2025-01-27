@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node{
+    int data;
+    struct node *link;
+};
+
+struct node *add_node(struct node *head,int data);
+
+int main(){
+    struct node *head,*ptr;
+    head=(struct node *)malloc(sizeof(struct node));
+    head->data=1;
+    ptr=head;
+    int n,s=0;
+    printf("Enter the no. of nodes (When 1 is already there)in a Linked List:");
+    scanf("%d",&n);
+    for(int  i=1;i<=n;i++){
+        int td;
+        printf("NODE %d = ",i+1);
+        scanf("%d",&td);
+        head=add_node(head,td);
+    }
+    printf("DATA OF THE NODES IN SEQUENCE:\n")
+    while(ptr!=NULL){
+        s=s+(ptr->data);
+        printf("%d ",ptr->data);
+        ptr=ptr->link;
+      
+    }
+    printf("\nSum:%d",s);
+    return 0;
+}
+
+struct node *add_node(struct node *head,int data){
+    struct node *temp;
+    temp=(struct node *)malloc(sizeof(struct node));
+    temp->data=data;
+    head->link=temp;
+    temp->link=NULL;
+    
+    head=temp;
+    return head;
+}
