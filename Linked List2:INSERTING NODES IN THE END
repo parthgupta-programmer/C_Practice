@@ -1,0 +1,98 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//1.INSERTING THE NODE IN THE END OF THE LINKED LIST
+//2.Counting the no. of nodes in the linked list
+//3.INPUTTING THE data from the user for a particular node
+
+struct node{//creating the Self Referential structure named node
+    int data;
+    struct node*link;
+};
+
+int count(struct node *head);//function counting the no.of nodes
+void add_node(struct node *head,int data);//function adding the node at the end of the linked list(Time Complexity:O(n)). 
+struct node *add_node2(struct node *head,int data);//function adding the node at the end of the linked list one by one in starting after getting the head(Time Complexity:O(1)).
+
+int main(){
+    struct node *head,*ptr;
+    head=(struct node *)malloc(sizeof(struct node));
+    ptr=head;
+    head->data=1;
+    
+    int n;
+    printf("Enter the no. of nodes you wanted:");
+    scanf("%d",&n);
+    printf("Enter the data for the node:\n");
+    for(int i=1;i<=n;i++){//taking input of the data of the n node in the linked list
+        int td;//temporary data being changing after every value of i
+        printf("NODE %d = ",i);
+        scanf("%d",&td);
+        head=add_node2(head,td);
+    }
+    
+    
+    // head=add_node2(head,67);
+    // head=add_node2(head,87);
+    // head=add_node2(head,98);
+    // head=add_node2(head,101);
+    
+    struct node *node2;
+    node2=(struct node *)malloc(sizeof(struct node));
+    node2->data=2;
+    node2->link=NULL;
+    
+    head->link=node2;
+    
+    struct node *node3;
+    node3=(struct node *)malloc(sizeof(struct node));
+    
+    node3->data=3;
+    node3->link=NULL;
+    
+    node2->link=node3;
+    
+    // while(head->link!=NULL){//DONE to store the address of link of the last node (i.e. node2) into head
+    //     head=head->link;
+    // }
+    
+    // struct node *newnode;
+    // newnode=(struct node *)malloc(sizeof(struct node));
+    // newnode->data=4;
+    // head->link=newnode;//here assigning the link of node3 the address of newnode
+    // newnode->link=NULL;
+    
+    add_node(ptr,67);//using function adding a new node
+    
+    printf("No.of NODES = %d\n",count(ptr));
+    return 0;
+}
+int count(struct node *head){
+    int c=0;
+    while(head!=NULL){
+        head=head->link;
+        c++;
+    }
+    return c;
+}
+void add_node(struct node *head,int data){
+    while(head->link!=NULL){
+        head=head->link;
+    }
+    struct node *nn;
+    nn=(struct node *)malloc(sizeof(struct node));
+    nn->data=data;
+    head->link=nn;
+    nn->link=NULL;
+}
+struct node *add_node2(struct node *head,int data){
+    struct node *temp;
+    temp=(struct  node *)malloc(sizeof(struct node));
+    temp->data=data;
+    head->link=temp;
+    
+    temp->link=NULL;
+    head=temp;
+    
+    return head;
+}
