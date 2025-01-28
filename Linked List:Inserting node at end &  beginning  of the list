@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node{
+    int data;
+    struct node *link;
+};
+struct node *add_node_at_end(struct node *head,int data);//NODE INSERTION AT END OF THE LINKED LIST 
+struct node *add_node_at_begining(struct node *head,int data);//NODE INSERTION AT THE BEGINNING OF THE LINKED LIST
+int main(){
+    struct node *head,*ptr;
+    head=(struct node *)malloc(sizeof(struct node));
+    
+    ptr=head;
+    head->data=2;
+
+    // struct node *node2;
+    // node2=(struct node *)malloc(sizeof(struct node));
+    // node2->data=2;
+    
+    // head->link=node2;
+    head=add_node_at_end(head,3);
+    head=add_node_at_end(head,4);
+    head=add_node_at_begining(ptr,1);
+    ptr=head;
+    while(ptr!=NULL){
+        printf("DATA:%d\n",ptr->data);
+        ptr=ptr->link;
+    }
+    
+    return 0;
+}
+
+struct node *add_node_at_end(struct node *head,int data){
+    struct node *temp;
+    temp=(struct node *)malloc(sizeof(struct node));
+    temp->data=data;
+    temp->link=NULL;
+    head->link=temp;
+    head=temp;
+    return head;
+}
+struct node *add_node_at_begining(struct node *head,int data){
+    struct node *temp2;
+    temp2=(struct node *)malloc(sizeof(struct node));
+    temp2->data=data;
+    temp2->link=head;
+    head=temp2;
+    
+}
