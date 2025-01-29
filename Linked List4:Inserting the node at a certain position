@@ -1,0 +1,78 @@
+//INSERTING THE NODE AT A CERTAIN POSITON SPECIFIED BY THE USER IN THE LINKED LIST(Other than 1)
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node{
+    int data;
+    struct node *link;
+};
+
+struct node *add_node(struct node *head,int data);//Fucntion to add a node at the end of the linked list
+void add_node2(struct node *head,int p,int data);//Fucntion to add a node at a certain postion (p)
+int main(){
+    struct node *head,*ptr,*ptr2;
+    head=(struct node *)malloc(sizeof(struct node));
+    
+    ptr=head;
+    ptr2=head;
+    
+    head->data=1;
+    
+    head=add_node(head,2);
+    head=add_node(head,4);
+    head=add_node(head,5);
+    
+    printf("LINKED LIST ELEMENTS (BEFORE INSERTION):");
+    while(ptr!=NULL){
+        printf("%d ",ptr->data);
+        ptr=ptr->link;
+    }
+    printf("\n");
+    
+    int p,d;
+    printf("ENTER THE POSITION TO ADD A NODE:");
+    scanf("%d",&p);
+    printf("ENTER THE DATA OF THE NODE:");
+    scanf("%d",&d);
+    
+    printf("LINKED LIST ELEMENTS (AFTER INSERTION):");
+    
+    add_node2(ptr2,p,d);
+    
+    while(ptr2!=NULL){
+        printf("%d ",ptr2->data);
+        ptr2=ptr2->link;
+    }
+    
+    return 0;
+}
+struct node *add_node(struct node *head,int data){
+    struct node *temp;
+    temp=(struct node *)malloc(sizeof(struct node));
+    temp->data=data;
+    head->link=temp;
+    temp->link=NULL;
+    head=temp;
+    return head;
+}
+void add_node2(struct node *head,int p,int data){
+    struct node *temp;
+    temp=(struct node *)malloc(sizeof(struct node));
+    temp->data=data;
+    
+    while((p-1)>1){//p-1(so that we could get the address of the next node which is stored in the link of the previous node)
+        head=head->link;
+        p--;
+    }
+    temp->link=head->link;
+    head->link=temp;
+    
+}
+
+
+//OUTPUT:
+// LINKED LIST ELEMENTS (BEFORE INSERTION):1 2 4 5 
+// ENTER THE POSITION TO ADD A NODE:3
+// ENTER THE DATA OF THE NODE:3
+// LINKED LIST ELEMENTS (AFTER INSERTION):1 2 3 4 5 
+
