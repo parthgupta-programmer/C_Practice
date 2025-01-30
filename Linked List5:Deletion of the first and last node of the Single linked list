@@ -1,0 +1,69 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node{
+    int data;
+    struct node *link;
+};
+
+struct node *add_node_at_end(struct node *head,int data);//Function to add a node at the end of the linked list
+struct node *delete_first_node(struct node *head);//Function to delete the first node of the linked list
+void delete_last_node(struct node *head);//Function to delete the last node
+int main(){
+    struct node *head,*ptr,*ptr2;
+    head=(struct node *)malloc(sizeof(struct node));
+    
+    ptr=head;
+    ptr2=head;
+    
+    head->data=1;
+    head=add_node_at_end(head,2);
+    head=add_node_at_end(head,3);
+    head=add_node_at_end(head,4);
+    head=add_node_at_end(head,5);
+    head=add_node_at_end(head,6);
+    
+    printf("ELEMENTS OF THE LINKED LIST:-\n\n");
+    printf("BEFORE DELETION:");
+    while(ptr2!=NULL){
+        printf("%d ",ptr2->data);
+        ptr2=ptr2->link;
+    }
+    
+    ptr=delete_first_node(ptr);//Deletes the First NODE
+    delete_last_node(ptr);//Deletes the Last NODE
+    printf("\nAFTER DELETION(First and Last Node):");
+    while(ptr!=NULL){
+        printf("%d ",ptr->data);
+        ptr=ptr->link;
+    }
+    return 0;
+}
+struct node *add_node_at_end(struct node *head,int data){
+    struct node *temp;
+    temp=(struct node*)malloc(sizeof(struct node));
+
+    temp->data=data;
+    temp->link=NULL;
+    
+    head->link=temp;
+    head=temp;
+    return head;
+}
+struct node *delete_first_node(struct node *head){
+    struct node *temp;
+    temp=head;
+    head=head->link;
+    free(temp);
+    temp=NULL;
+    return head;
+}
+void delete_last_node(struct node *head){
+    struct node *temp;
+    while((head->link->link)!=NULL){
+        head=head->link;
+    }
+    temp=head->link;
+    head->link=NULL;
+    free(temp);
+}
