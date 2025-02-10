@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node{
+    int data;
+    struct node *link;
+};
+
+struct node *add_node(struct node *head,int data);
+void delete_node(struct node **head,int p);
+int main(){
+    int p;
+    struct node *head,*ptr,*ptr1;
+    head=(struct node *)malloc(sizeof(struct node));
+    
+    ptr=head;
+    ptr1=head;
+    
+    head->data=1;
+    head=add_node(head,2);
+    head=add_node(head,3);
+    head=add_node(head,4);
+    head=add_node(head,5);
+    
+    printf("Elements of the linked list:\n");
+    while(ptr!=NULL){
+        printf("%d ",ptr->data);
+        ptr=ptr->link;
+    }
+    printf("\n");
+    
+    printf("Enter the position of the node to delete:");
+    scanf("%d",&p);
+    printf("\n");
+    delete_node(&ptr1,p);
+    printf("Elements of the linked list after deletion:\n");
+    while(ptr1!=NULL){
+        printf("%d ",ptr1->data);
+        ptr1=ptr1->link;
+    }
+    return 0;
+}
+struct node *add_node(struct node *head,int data){
+    struct node *temp;
+    temp=(struct node *)malloc(sizeof(struct node));
+    
+    head->link=temp;
+    temp->data=data;
+    
+    head=temp;
+    return head;
+}
+void delete_node(struct node **head,int p){
+    // struct node *temp;
+    // temp=(struct node *)malloc(sizeof(struct node));
+    
+    // while((p-2)!=0){
+    //      head=head->link;
+    //      p--;
+    // }
+    // temp=head->link->link;
+    // head->link=temp;
+    
+    // free(temp);
+    struct node *previous,*current;
+    
+    previous=*head;
+    current=*head;
+    
+    if(*head==NULL){
+        printf("Linked list is empty!!");
+    }
+    else if(p==1){
+        *head=current->link;
+        free(current);
+        current=NULL;
+    }
+    else{
+        while(p!=1){
+            previous=current;
+            current=current->link;
+            p--;
+        }
+        previous->link=current->link;
+        free(current);
+        current=NULL;
+    }
+}
